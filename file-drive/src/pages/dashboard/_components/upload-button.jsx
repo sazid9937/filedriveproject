@@ -42,7 +42,7 @@ export function UploadButton() {
   //     // Replace this with the actual endpoint to get the upload URL
   //     // const postUrl = await fetch('/api/generate-upload-url').then(res => res.text());
 
-  //     const apiUrl = 'http://localhost:8000/api/files/upload'
+  //     const apiUrl = 'https://filedriveproject.onrender.com/api/files/upload'
 
   //     const fileType = values.file[0].type;
       
@@ -84,7 +84,7 @@ export function UploadButton() {
 
   async function onSubmit(values) {
     try {
-        const apiUrl = 'http://localhost:8000/api/files/upload';
+        const apiUrl = 'https://filedriveproject.onrender.com/api/files/upload';
 
         const formData = new FormData();
         formData.append('file', values.file[0]);
@@ -103,7 +103,7 @@ export function UploadButton() {
 
         const response = await result.json();
 
-        const filesResponse = await fetch('http://localhost:8000/api/getfiles/', {
+        const filesResponse = await fetch('https://filedriveproject.onrender.com/api/getfiles/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

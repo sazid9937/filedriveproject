@@ -48,7 +48,7 @@ export function FileCardActions({ file, isFavorited , id }) {
   const toggleFavorite = async(isFavorited) => {
     
     try {
-      const response = await fetch(`http://localhost:8000/api/setfiles/${id}/favorite`, {
+      const response = await fetch(`https://filedriveproject.onrender.com/api/setfiles/${id}/favorite`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ export function FileCardActions({ file, isFavorited , id }) {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/delete/${id}`, {
+      const response = await fetch(`https://filedriveproject.onrender.com/api/delete/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

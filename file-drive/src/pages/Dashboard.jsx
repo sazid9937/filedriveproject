@@ -89,7 +89,7 @@ export function Dashboard({
   //     })) ?? [];
 
   useEffect(() => {
-    const apiUrl = 'http://localhost:8000/api/getfiles/';
+    const apiUrl = 'https://filedriveproject.onrender.com/api/getfiles/';
     const fetchFileData = async () => {
       const userId = localStorage.getItem('id')
       try {
