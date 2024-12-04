@@ -25,9 +25,9 @@ export function FileCard({
   //   userId: file.userId,
   // });
 
-  const { user } = useUser();
-  console.log('--------------------------------',user)
-  const { firstName, fullName, imageUrl } = user;
+  // const { user } = useUser();
+  // console.log('--------------------------------',user)
+  // const { firstName, fullName, imageUrl } = user;
   const typeIcons = {
     image: <ImageIcon />,
     pdf: <FileTextIcon />,
@@ -67,13 +67,13 @@ export function FileCard({
         {getTypeForMimeType(file.mimetype) === "pdf" && <FileTextIcon className="w-20 h-20" />}
       </CardContent>
       <CardFooter className="flex justify-between">
-        <div className="flex gap-2 text-xs text-gray-700 w-40 items-center">
+        {/* <div className="flex gap-2 text-xs text-gray-700 w-40 items-center">
           <Avatar className="w-6 h-6">
             <AvatarImage src={user && imageUrl} />
             <AvatarFallback>{user && firstName}</AvatarFallback>
           </Avatar>
           {user && fullName}
-        </div>
+        </div> */}
         <div className="text-xs text-gray-700">
           Uploaded on {formatRelative(new Date(file.uploadedAt), new Date())}
         </div>

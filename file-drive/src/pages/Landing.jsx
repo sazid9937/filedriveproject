@@ -1,8 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom'; // Correct import for Link
+import { Link,useNavigate  } from 'react-router-dom'; // Correct import for Link
 
 const Landing = () => {
+
+  const navigate = useNavigate();
+
+  const handleGetStartedClick = () => {
+    const userId = localStorage.getItem('id');
+    if (userId) {
+      navigate('/dashboard/files');
+    } else {
+      alert('Please log in first to access the dashboard.');
+    }
+  };
   return (
     <div className="bg-white">
       <div className="relative isolate px-6 pt-14 lg:px-8">
@@ -36,12 +47,12 @@ const Landing = () => {
               minute.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                to="/file" // Use 'to' instead of 'href' for Link
+              <botton
+                 onClick={handleGetStartedClick}
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
-              </Link>
+              </botton>
               <Link
                 to="/learnmore"
                 className="text-sm font-semibold leading-6 text-gray-900"

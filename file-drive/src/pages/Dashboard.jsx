@@ -91,7 +91,7 @@ export function Dashboard({
   useEffect(() => {
     const apiUrl = 'http://localhost:8000/api/getfiles/';
     const fetchFileData = async () => {
-      const userId = user.user?.id
+      const userId = localStorage.getItem('id')
       try {
         setIsLoading(true)
         const response = await fetch(apiUrl, {
@@ -122,8 +122,8 @@ export function Dashboard({
     // const userProfile = useQuery(api.users.getUserProfile, { userId });
 
 
-    const { user } = useUser();
-    const { firstName, fullName, imageUrl } = user;
+    // const { user } = useUser();
+    // const { firstName, fullName, imageUrl } = user;
 
     if (!userId) {
       return (
@@ -139,10 +139,10 @@ export function Dashboard({
     return (
       <div className="flex gap-2 text-xs text-gray-700 w-40 items-center">
         <Avatar className="w-6 h-6">
-          <AvatarImage src={imageUrl} />
-          <AvatarFallback>{firstName || "CN"}</AvatarFallback>
+          {/* <AvatarImage src={imageUrl} /> */}
+          <AvatarFallback>{'CN'}</AvatarFallback>
         </Avatar>
-        {fullName}
+        {/* {fullName} */}
       </div>
     );
   }

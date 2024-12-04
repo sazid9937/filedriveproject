@@ -5,6 +5,8 @@ import fileRoutes from './routes/fileRoutes.js';
 import getFilesRoute from './routes/getFilesRoute.js'
 import storeFavoriteFile from './routes/storeFavoriteFiles.js'
 import trashFiles from './routes/trashRoute.js'
+import signup from './routes/signup.js'
+import login from './routes/login.js'
 
 const app = express();
 
@@ -23,7 +25,8 @@ app.use('/api/files', fileRoutes);
 app.use('/api/getfiles', getFilesRoute)
 app.use('/api/setfiles', storeFavoriteFile)
 app.use('/api/delete', trashFiles)
-
+app.use('/api/signup',signup)
+app.use('/api/login',login)
 
 
 

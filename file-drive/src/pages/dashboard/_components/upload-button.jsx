@@ -34,7 +34,7 @@ export function UploadButton() {
     },
   });
 
-  const userId = user?.id
+  const userId = localStorage.getItem('id')
   const fileRef = form.register("file");
 
   // async function onSubmit(values) {
@@ -102,6 +102,14 @@ export function UploadButton() {
         }
 
         const response = await result.json();
+
+        const filesResponse = await fetch('http://localhost:8000/api/getfiles/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${userId}`
+          }
+        });
 
         // Optionally handle the response here if needed
         // const { storageId } = response;

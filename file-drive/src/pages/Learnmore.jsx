@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link } from 'react-router-dom'; // Correct import for Link
@@ -82,7 +83,7 @@ const Learnmore = () => {
         <blockquote className="mt-6 text-lg italic text-gray-600 text-center">
           "This file management system has transformed the way our team collaborates. Highly recommend!"
           <br />
-          <span className="font-semibold">- Alex, Project Manager</span>
+          <span className="font-semibold">- Saz, Project Manager</span>
         </blockquote>
       </div>
 
