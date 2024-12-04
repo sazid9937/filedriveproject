@@ -2,7 +2,7 @@ import connectDb from "./db/index.js";
 import app from "./app.js";
 
 connectDb().then(() => {
-    app.listen(process.env.PORT || 8000, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log('App is runnimg ')
     })
 }
